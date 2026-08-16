@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Physics Universe | Explore How Reality Works</title>
+
+<meta name="description"
+content="An interactive physics learning website exploring mechanics, waves, electricity, relativity, quantum physics and the universe.">
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", sans-serif;
+
+    background:
+        radial-gradient(circle at 20% 10%, rgba(72, 110, 255, 0.12), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(153, 75, 255, 0.10), transparent 30%),
+        #05070d;
+
+    color: #f5f7ff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(5, 7, 13, 0.75);
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.nav-inner {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: #7c9cff;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #aeb6cc;
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.menu {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    padding-top: 80px;
+}
+
+.stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(1px 1px at 10% 20%, white, transparent),
+        radial-gradient(1px 1px at 30% 80%, white, transparent),
+        radial-gradient(1px 1px at 70% 30%, white, transparent),
+        radial-gradient(1px 1px at 90% 70%, white, transparent),
+        radial-gradient(1px 1px at 50% 50%, white, transparent),
+        radial-gradient(1px 1px at 15% 60%, white, transparent);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 850px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    border: 1px solid rgba(124,156,255,0.25);
+    background: rgba(124,156,255,0.08);
+
+    border-radius: 50px;
+
+    color: #a9bbff;
+    font-size: 13px;
+
+    margin-bottom: 24px;
+}
+
+.badge-dot {
+    width: 7px;
+    height: 7px;
+
+    background: #7c9cff;
+    border-radius: 50%;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 8vw, 92px);
+    line-height: 0.95;
+    letter-spacing: -5px;
+
+    margin-bottom: 28px;
+}
+
+.gradient-text {
+    background: linear-gradient(
+        100deg,
+        #ffffff,
+        #9fb3ff,
+        #cda8ff
+    );
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    max-width: 650px;
+
+    color: #9ba5bb;
+    font-size: 18px;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+
+    padding: 13px 20px;
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    transition: 0.25s;
+}
+
+.btn-primary {
+    background: white;
+    color: #05070d;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.06);
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+    padding: 110px 0;
+}
+
+.section-header {
+    margin-bottom: 45px;
+}
+
+.section-label {
+    color: #7c9cff;
+    font-size: 13px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.section-header h2 {
+    font-size: clamp(32px, 5vw, 52px);
+    letter-spacing: -2px;
+}
+
+.section-header p {
+    max-width: 650px;
+    color: #8f98ad;
+    margin-top: 12px;
+}
+
+
+/* =========================================================
+   TOPIC CARDS
+========================================================= */
+
+.topic-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 18px;
+}
+
+.card {
+    background: rgba(255,255,255,0.035);
+
+    border: 1px solid rgba(255,255,255,0.07);
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    transition:
+        transform 0.3s,
+        border-color 0.3s,
+        background 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(124,156,255,0.35);
+
+    background: rgba(255,255,255,0.055);
+}
+
+.card-icon {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #8f98ad;
+    font-size: 14px;
+}
+
+.card-link {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    color: #9eb1ff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SIMULATION
+========================================================= */
+
+.simulation {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.5fr)
+        minmax(280px, 0.8fr);
+
+    gap: 20px;
+}
+
+.sim-box {
+    background: #090c14;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.sim-header {
+    padding: 18px 22px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sim-title {
+    font-weight: 700;
+}
+
+.sim-canvas {
+    height: 420px;
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+}
+
+.ground {
+    position: absolute;
+
+    bottom: 70px;
+    left: 8%;
+    right: 8%;
+
+    height: 2px;
+
+    background: #343b4d;
+}
+
+.ball {
+    position: absolute;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: #9fb3ff;
+
+    box-shadow:
+        0 0 25px rgba(124,156,255,0.8);
+
+    left: 12%;
+    bottom: 72px;
+}
+
+.sim-controls {
+    padding: 22px;
+}
+
+.control {
+    margin-bottom: 20px;
+}
+
+.control label {
+    display: flex;
+    justify-content: space-between;
+
+    color: #aeb6ca;
+    font-size: 13px;
+
+    margin-bottom: 8px;
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: #8ca4ff;
+}
+
+
+/* =========================================================
+   FORMULAS
+========================================================= */
+
+.formula-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(240px, 1fr));
+
+    gap: 18px;
+}
+
+.formula {
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(124,156,255,0.08),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 18px;
+}
+
+.formula-name {
+    color: #9ca7be;
+    font-size: 13px;
+
+    margin-bottom: 15px;
+}
+
+.equation {
+    font-family: Georgia, serif;
+
+    font-size: 32px;
+
+    color: white;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.search-area {
+    max-width: 650px;
+    margin-bottom: 40px;
+}
+
+.search-box {
+    display: flex;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+.search-box input {
+    flex: 1;
+
+    padding: 15px 18px;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    color: white;
+}
+
+.search-box button {
+    padding: 0 20px;
+
+    border: none;
+
+    background: white;
+    color: black;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   LEARNING PATH
+========================================================= */
+
+.path {
+    display: grid;
+
+    gap: 12px;
+
+    max-width: 800px;
+}
+
+.path-item {
+    display: grid;
+
+    grid-template-columns: 55px 1fr auto;
+    align-items: center;
+    gap: 18px;
+
+    padding: 18px;
+
+    background: rgba(255,255,255,0.035);
+
+    border: 1px solid rgba(255,255,255,0.07);
+
+    border-radius: 14px;
+}
+
+.path-number {
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(124,156,255,0.12);
+
+    color: #9fb3ff;
+
+    font-weight: 800;
+}
+
+.path-item h3 {
+    font-size: 16px;
+}
+
+.path-item p {
+    color: #858fa4;
+    font-size: 13px;
+}
+
+.status {
+    color: #7c9cff;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 50px;
+
+    align-items: center;
+}
+
+.about-text p {
+    color: #9ba5bb;
+
+    margin-bottom: 18px;
+}
+
+.quote {
+    padding: 30px;
+
+    border-left: 3px solid #7c9cff;
+
+    background: rgba(124,156,255,0.05);
+
+    color: #dce2f2;
+
+    border-radius: 0 15px 15px 0;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 50px 0;
+
+    border-top: 1px solid rgba(255,255,255,0.07);
+
+    color: #737d92;
+}
+
+.footer-inner {
+    display: flex;
+
+    justify-content: space-between;
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+.footer-title {
+    color: white;
+    font-weight: 800;
+}
+
+.socials {
+    display: flex;
+    gap: 18px;
+}
+
+.socials a {
+    color: #8f98ad;
+}
+
+.socials a:hover {
+    color: white;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+        left: 0;
+        right: 0;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+        background: #070910;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .simulation {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .sim-canvas {
+        height: 330px;
+    }
+
+    .path-item {
+        grid-template-columns: 45px 1fr;
+    }
+
+    .status {
+        display: none;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+<div class="container nav-inner">
+
+<a href="#" class="logo">
+    PHYSICS<span>∞</span>
+</a>
+
+<button class="menu" onclick="toggleMenu()">
+    ☰
+</button>
+
+<ul class="nav-links" id="navLinks">
+
+<li>
+    <a href="#topics">Topics</a>
+</li>
+
+<li>
+    <a href="#simulation">Simulation</a>
+</li>
+
+<li>
+    <a href="#formulas">Formulas</a>
+</li>
+
+<li>
+    <a href="#learning">Learning Path</a>
+</li>
+
+<li>
+    <a href="#about">About</a>
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+<div class="stars"></div>
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="badge">
+    <span class="badge-dot"></span>
+    Physics • Science • Universe
+</div>
+
+<h1>
+    Understand the
+    <span class="gradient-text">
+        Universe.
+    </span>
+</h1>
+
+<p>
+    Physics is more than formulas.
+    It is our attempt to understand motion,
+    energy, space, time, matter and the
+    fundamental rules that shape reality.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#topics"
+   class="btn btn-primary">
+   Start Exploring →
+</a>
+
+<a href="#simulation"
+   class="btn btn-secondary">
+   Try a Simulation
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     TOPICS
+===================================================== -->
+
+<section id="topics">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-label">
+    Explore
+</div>
+
+<h2>
+    The foundations of physics.
+</h2>
+
+<p>
+    Start with the fundamental ideas and gradually
+    move toward the physics of the Universe.
+</p>
+
+</div>
+
+
+<div class="topic-grid">
+
+
+<div class="card">
+
+<div class="card-icon">🚀</div>
+
+<h3>Mechanics</h3>
+
+<p>
+    Motion, forces, energy, momentum,
+    gravity and Newton's laws.
+</p>
+
+<a class="card-link"
+   href="#simulation">
+   Explore →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">〰️</div>
+
+<h3>Waves</h3>
+
+<p>
+    Oscillations, sound, frequency,
+    wavelength and wave behaviour.
+</p>
+
+<a class="card-link"
+   href="#formulas">
+   Explore →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">⚡</div>
+
+<h3>Electricity</h3>
+
+<p>
+    Charge, current, voltage,
+    resistance and electric fields.
+</p>
+
+<a class="card-link"
+   href="#formulas">
+   Explore →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">🔭</div>
+
+<h3>Optics</h3>
+
+<p>
+    Reflection, refraction, lenses,
+    mirrors and the behaviour of light.
+</p>
+
+<a class="card-link"
+   href="#formulas">
+   Explore →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">🌌</div>
+
+<h3>Relativity</h3>
+
+<p>
+    Space, time, gravity and
+    Einstein's description of spacetime.
+</p>
+
+<a class="card-link"
+   href="#learning">
+   Explore →
+</a>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">⚛️</div>
+
+<h3>Quantum Physics</h3>
+
+<p>
+    The strange microscopic world
+    of particles, probability and energy.
+</p>
+
+<a class="card-link"
+   href="#learning">
+   Explore →
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SIMULATION
+===================================================== -->
+
+<section id="simulation">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-label">
+    Interactive
+</div>
+
+<h2>
+    Experiment with motion.
+</h2>
+
+<p>
+    Change the initial velocity and acceleration
+    and watch the object respond.
+</p>
+
+</div>
+
+
+<div class="simulation">
+
+
+<div class="sim-box">
+
+<div class="sim-header">
+
+<div class="sim-title">
+    1D Motion Simulation
+</div>
+
+<div id="timeDisplay">
+    t = 0.0 s
+</div>
+
+</div>
+
+
+<div class="sim-canvas" id="canvas">
+
+<div class="ground"></div>
+
+<div class="ball" id="ball"></div>
+
+</div>
+
+</div>
+
+
+<div class="sim-box">
+
+<div class="sim-header">
+
+<div class="sim-title">
+    Controls
+</div>
+
+</div>
+
+
+<div class="sim-controls">
+
+
+<div class="control">
+
+<label>
+    Initial Velocity
+    <span id="velocityValue">
+        20 m/s
+    </span>
+</label>
+
+<input
+    id="velocity"
+    type="range"
+    min="0"
+    max="50"
+    value="20"
+>
+
+</div>
+
+
+<div class="control">
+
+<label>
+    Acceleration
+    <span id="accelerationValue">
+        0 m/s²
+    </span>
+</label>
+
+<input
+    id="acceleration"
+    type="range"
+    min="-10"
+    max="10"
+    value="0"
+    step="0.5"
+>
+
+</div>
+
+
+<button
+    class="btn btn-primary"
+    onclick="startSimulation()">
+
+    ▶ Run Simulation
+
+</button>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FORMULAS
+===================================================== -->
+
+<section id="formulas">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-label">
+    Fundamental Equations
+</div>
+
+<h2>
+    A few equations that describe reality.
+</h2>
+
+</div>
+
+
+<div class="formula-grid">
+
+
+<div class="formula">
+
+<div class="formula-name">
+    Newton's Second Law
+</div>
+
+<div class="equation">
+    F = ma
+</div>
+
+</div>
+
+
+<div class="formula">
+
+<div class="formula-name">
+    Kinetic Energy
+</div>
+
+<div class="equation">
+    KE = ½mv²
+</div>
+
+</div>
+
+
+<div class="formula">
+
+<div class="formula-name">
+    Gravitational Potential Energy
+</div>
+
+<div class="equation">
+    PE = mgh
+</div>
+
+</div>
+
+
+<div class="formula">
+
+<div class="formula-name">
+    Wave Equation
+</div>
+
+<div class="equation">
+    v = fλ
+</div>
+
+</div>
+
+
+<div class="formula">
+
+<div class="formula-name">
+    Universal Gravitation
+</div>
+
+<div class="equation">
+    F = Gm₁m₂/r²
+</div>
+
+</div>
+
+
+<div class="formula">
+
+<div class="formula-name">
+    Mass–Energy Equivalence
+</div>
+
+<div class="equation">
+    E = mc²
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     LEARNING PATH
+===================================================== -->
+
+<section id="learning">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-label">
+    Roadmap
+</div>
+
+<h2>
+    A path through physics.
+</h2>
+
+<p>
+    Build your understanding from classical physics
+    toward modern physics.
+</p>
+
+</div>
+
+
+<div class="path">
+
+
+<div class="path-item">
+
+<div class="path-number">
+    01
+</div>
+
+<div>
+
+<h3>Mathematical Foundations</h3>
+
+<p>
+    Algebra, geometry, trigonometry and
+    the mathematics used in physics.
+</p>
+
+</div>
+
+<div class="status">
+    FOUNDATION
+</div>
+
+</div>
+
+
+<div class="path-item">
+
+<div class="path-number">
+    02
+</div>
+
+<div>
+
+<h3>Classical Mechanics</h3>
+
+<p>
+    Motion, forces, energy, momentum
+    and gravitation.
+</p>
+
+</div>
+
+<div class="status">
+    CORE
+</div>
+
+</div>
+
+
+<div class="path-item">
+
+<div class="path-number">
+    03
+</div>
+
+<div>
+
+<h3>Waves & Electromagnetism</h3>
+
+<p>
+    Oscillations, sound, light,
+    electricity and magnetism.
+</p>
+
+</div>
+
+<div class="status">
+    CORE
+</div>
+
+</div>
+
+
+<div class="path-item">
+
+<div class="path-number">
+    04
+</div>
+
+<div>
+
+<h3>Relativity</h3>
+
+<p>
+    Space, time, reference frames
+    and spacetime.
+</p>
+
+</div>
+
+<div class="status">
+    MODERN
+</div>
+
+</div>
+
+
+<div class="path-item">
+
+<div class="path-number">
+    05
+</div>
+
+<div>
+
+<h3>Quantum Physics</h3>
+
+<p>
+    The physics of the microscopic world.
+</p>
+
+</div>
+
+<div class="status">
+    MODERN
+</div>
+
+</div>
+
+
+<div class="path-item">
+
+<div class="path-number">
+    06
+</div>
+
+<div>
+
+<h3>Cosmology</h3>
+
+<p>
+    Stars, galaxies, black holes,
+    expansion and the early Universe.
+</p>
+
+</div>
+
+<div class="status">
+    UNIVERSE
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SEARCH
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-label">
+    Knowledge
+</div>
+
+<h2>
+    Search the Universe.
+</h2>
+
+<p>
+    Search for a physics concept and
+    discover where it belongs.
+</p>
+
+</div>
+
+
+<div class="search-area">
+
+<div class="search-box">
+
+<input
+    id="searchInput"
+    type="text"
+    placeholder="Try: gravity, waves, quantum..."
+>
+
+<button onclick="searchPhysics()">
+    Search
+</button>
+
+</div>
+
+<p
+    id="searchResult"
+    style="
+        margin-top:15px;
+        color:#9ba5bb;
+    ">
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="about">
