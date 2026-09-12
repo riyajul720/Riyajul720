@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA Watch — Time, Redefined</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- EXTERNAL CSS LINK -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header id="header">
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">
+        <span class="logo-dot"></span> NOVA
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#design">Design</a></li>
+        <li><a href="#specs">Specs</a></li>
+        <li><a href="#buy" class="cta-sm">Order Series 3</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="badge">
+        <span class="badge-dot"></span> Next-Gen Optical Matrix
+      </div>
+
+      <h1 class="hero-title">TIME, REDEFINED.</h1>
+      
+      <p class="hero-description">
+        Engineered with Grade 5 Titanium and a sapphire lens. A supercomputer encapsulated in a 42-gram featherweight form factor.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#buy" class="btn btn-primary">Pre-order Now</a>
+        <a href="#features" class="btn btn-secondary">Explore Architecture</a>
+      </div>
+
+      <div class="showcase" id="showcaseArea">
+        <div class="showcase-glow" id="showcaseGlow"></div>
+        <div class="watch-card" id="watchCard">
+          <svg class="watch-svg" viewBox="0 0 420 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="strapGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop id="strapA" offset="0%" stop-color="#2a2b30" />
+                <stop id="strapB" offset="50%" stop-color="#404149" />
+                <stop id="strapC" offset="100%" stop-color="#1e1f23" />
+              </linearGradient>
+              <linearGradient id="titaniumGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#c4c7d0" />
+                <stop offset="25%" stop-color="#4d5059" />
+                <stop offset="50%" stop-color="#d4d7e2" />
+                <stop offset="75%" stop-color="#3d4047" />
+                <stop offset="100%" stop-color="#90939d" />
+              </linearGradient>
+              <linearGradient id="bezelEdge" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#222328" />
+                <stop offset="100%" stop-color="#0a0a0c" />
+              </linearGradient>
+            </defs>
+
+            <rect x="145" y="16" width="130" height="180" rx="34" fill="url(#strapGrad)" />
+            <rect x="145" y="424" width="130" height="180" rx="34" fill="url(#strapGrad)" />
+            <rect x="358" y="250" width="14" height="60" rx="7" fill="url(#titaniumGrad)" />
+            <rect x="358" y="336" width="10" height="42" rx="5" fill="#4d5059" />
+            <rect x="60" y="145" width="300" height="330" rx="74" fill="url(#titaniumGrad)" />
+            <rect x="66" y="151" width="288" height="318" rx="68" fill="url(#bezelEdge)" />
+            <rect x="76" y="161" width="268" height="298" rx="58" fill="#050608" />
+
+            <text x="210" y="240" text-anchor="middle" fill="#8d92a0" font-size="13" font-weight="600" letter-spacing="3">MON 12</text>
+            <text id="liveClock" x="210" y="325" text-anchor="middle" fill="#ffffff" font-size="70" font-weight="700" letter-spacing="-2">10:09</text>
+            
+            <circle cx="160" cy="392" r="14" fill="none" stroke="var(--accent)" stroke-width="3" stroke-dasharray="75" stroke-dashoffset="15" />
+            <text x="184" y="396" fill="#fff" font-size="13" font-weight="600">142</text>
+            <text x="184" y="408" fill="#8d92a0" font-size="9">BPM</text>
+
+            <circle cx="236" cy="392" r="14" fill="none" stroke="#7c5cff" stroke-width="3" stroke-dasharray="75" stroke-dashoffset="30" />
+            <text x="260" y="396" fill="#fff" font-size="13" font-weight="600">98%</text>
+            <text x="260" y="408" fill="#8d92a0" font-size="9">SPO2</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="color-picker">
+        <button class="color-btn active" style="--swatch: #3e3f46;" data-c1="#2a2b30" data-c2="#404149" data-c3="#1e1f23" data-accent="#6ee7ff"></button>
+        <button class="color-btn" style="--swatch: #192438;" data-c1="#101826" data-c2="#22334e" data-c3="#0c121e" data-accent="#5b95ff"></button>
+        <button class="color-btn" style="--swatch: #695642;" data-c1="#423425" data-c2="#745d44" data-c3="#312519" data-accent="#ffb076"></button>
+        <button class="color-btn" style="--swatch: #2d1d4c;" data-c1="#1d1233" data-c2="#432a74" data-c3="#130b23" data-accent="#bb7bff"></button>
+      </div>
+
+      <div class="specs-strip" id="specs">
+        <div class="spec-item">
+          <span class="spec-val">3000</span>
+          <span class="spec-lbl">Nits Peak Brightness</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-val">14 Days</span>
+          <span class="spec-lbl">Continuous Battery Life</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-val">100m</span>
+          <span class="spec-lbl">Water Resistance</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-val">42g</span>
+          <span class="spec-lbl">Titanium Chassis</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-features container" id="features">
+      <div class="section-head">
+        <span class="section-tag">Internal Engineering</span>
+        <h2 class="section-title">Built without compromise.</h2>
+      </div>
+
+      <div class="bento">
+        <div class="bento-box bento-large">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA Watch — Time, Redefined</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- EXTERNAL CSS LINK -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header id="header">
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">
+        <span class="logo-dot"></span> NOVA
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#design">Design</a></li>
+        <li><a href="#specs">Specs</a></li>
+        <li><a href="#buy" class="cta-sm">Order Series 3</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="badge">
+        <span class="badge-dot"></span> Next-Gen Optical Matrix
+      </div>
+
+      <h1 class="hero-title">TIME, REDEFINED.</h1>
+      
+      <p class="hero-description">
+        Engineered with Grade 5 Titanium and a sapphire lens. A supercomputer encapsulated in a 42-gram featherweight form factor.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#buy" class="btn btn-primary">Pre-order Now</a>
+        <a href="#features" class="btn btn-secondary">Explore Architecture</a>
+      </div>
+
+      <div class="showcase" id="showcaseArea">
+        <div class="showcase-glow" id="showcaseGlow"></div>
+        <div class="watch-card" id="watchCard">
+          <svg class="watch-svg" viewBox="0 0 420 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="strapGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop id="strapA" offset="0%" stop-color="#2a2b30" />
+                <stop id="strapB" offset="50%" stop-color="#404149" />
+                <stop id="strapC" offset="100%" stop-color="#1e1f23" />
+              </linearGradient>
+              <linearGradient id="titaniumGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#c4c7d0" />
+                <stop offset="25%" stop-color="#4d5059" />
+                <stop offset="50%" stop-color="#d4d7e2" />
+                <stop offset="75%" stop-color="#3d4047" />
+                <stop offset="100%" stop-color="#90939d" />
+              </linearGradient>
+              <linearGradient id="bezelEdge" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#222328" />
+                <stop offset="100%" stop-color="#0a0a0c" />
+              </linearGradient>
+            </defs>
+
+            <rect x="145" y="16" width="130" height="180" rx="34" fill="url(#strapGrad)" />
+            <rect x="145" y="424" width="130" height="180" rx="34" fill="url(#strapGrad)" />
+            <rect x="358" y="250" width="14" height="60" rx="7" fill="url(#titaniumGrad)" />
+            <rect x="358" y="336" width="10" height="42" rx="5" fill="#4d5059" />
+            <rect x="60" y="145" width="300" height="330" rx="74" fill="url(#titaniumGrad)" />
+            <rect x="66" y="151" width="288" height="318" rx="68" fill="url(#bezelEdge)" />
+            <rect x="76" y="161" width="268" height="298" rx="58" fill="#050608" />
+
+            <text x="210" y="240" text-anchor="middle" fill="#8d92a0" font-size="13" font-weight="600" letter-spacing="3">MON 12</text>
+            <text id="liveClock" x="210" y="325" text-anchor="middle" fill="#ffffff" font-size="70" font-weight="700" letter-spacing="-2">10:09</text>
+            
+            <circle cx="160" cy="392" r="14" fill="none" stroke="var(--accent)" stroke-width="3" stroke-dasharray="75" stroke-dashoffset="15" />
+            <text x="184" y="396" fill="#fff" font-size="13" font-weight="600">142</text>
+            <text x="184" y="408" fill="#8d92a0" font-size="9">BPM</text>
+
+            <circle cx="236" cy="392" r="14" fill="none" stroke="#7c5cff" stroke-width="3" stroke-dasharray="75" stroke-dashoffset="30" />
+            <text x="260" y="396" fill="#fff" font-size="13" font-weight="600">98%</text>
+            <text x="260" y="408" fill="#8d92a0" font-size="9">SPO2</text>
+          </svg>
+        </div>
+      </div>
+
+      <div class="color-picker">
+        <button class="color-btn active" style="--swatch: #3e3f46;" data-c1="#2a2b30" data-c2="#404149" data-c3="#1e1f23" data-accent="#6ee7ff"></button>
+        <button class="color-btn" style="--swatch: #192438;" data-c1="#101826" data-c2="#22334e" data-c3="#0c121e" data-accent="#5b95ff"></button>
+        <button class="color-btn" style="--swatch: #695642;" data-c1="#423425" data-c2="#745d44" data-c3="#312519" data-accent="#ffb076"></button>
+        <button class="color-btn" style="--swatch: #2d1d4c;" data-c1="#1d1233" data-c2="#432a74" data-c3="#130b23" data-accent="#bb7bff"></button>
+      </div>
+
+      <div class="specs-strip" id="specs">
+        <div class="spec-item">
+          <span class="spec-val">3000</span>
+          <span class="spec-lbl">Nits Peak Brightness</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-val">14 Days</span>
+          <span class="spec-lbl">Continuous Battery Life</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-val">100m</span>
+          <span class="spec-lbl">Water Resistance</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-val">42g</span>
+          <span class="spec-lbl">Titanium Chassis</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-features container" id="features">
+      <div class="section-head">
+        <span class="section-tag">Internal Engineering</span>
+        <h2 class="section-title">Built without compromise.</h2>
+      </div>
+
+      <div class="bento">
+        <div class="bento-box bento-large">
+          <div>
+            <h3 class="bento-h3">Retina micro-LED Matrix</h3>
+            <p class="bento-p">An edge-to-edge LTPO panel with a variable 1Hz–120Hz refresh rate. Always visible, even in blinding direct desert sunlight.</p>
+          </div>
+          <div class="bento-graphic-ring"></div>
+        </div>
+
+        <div class="bento-box bento-mid">
+          <div>
+            <h3 class="bento-h3">Grade 5 Aerospace Shell</h3>
+            <p class="bento-p">Forged through custom laser-sintered metallurgy for unprecedented structural tolerance and thermal distribution.</p>
+          </div>
+        </div>
+
+        <div class="bento-box bento-small">
+          <h3 class="bento-h3">Sub-surface ECG</h3>
+          <p class="bento-p">Continuous hemodynamic bio-monitoring using deep-wavelength optical spectroscopy.</p>
+        </div>
+
+        <div class="bento-box bento-small">
+          <h3 class="bento-h3">Sub-Zero Thermal</h3>
+          <p class="bento-p">Engineered to function reliably between -20°C and 55°C without battery cell degradation.</p>
+        </div>
+
+        <div class="bento-box bento-small">
+          <h3 class="bento-h3">Neural Core</h3>
+          <p class="bento-p">On-device machine learning processes sleep kinematics and stress biomarkers entirely locally.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="buy">
+      <div class="cta-banner">
+        <h2 class="section-title" style="margin-bottom: 16px;">The future is on your wrist.</h2>
+        <p class="bento-p" style="max-width: 480px; margin: 0 auto 36px;">Reserve yours today. Global dispatch starts next month with standard complimentary worldwide shipping.</p>
+        <a href="#" class="btn btn-primary">Reserve NOVA Series 3</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div class="footer-flex">
+      <p>© 2026 NOVA Hardware Laboratories Inc. All rights reserved.</p>
+      <p>Precision Crafted Silicon & Metal.</p>
+    </div>
+  </footer>
+
+  <!-- EXTERNAL JS SCRIPT -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+:root {
+  --bg: #070709;
+  --bg-alt: #0e0e13;
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --text-main: #f5f5f7;
+  --text-muted: #86868b;
+  --accent: #6ee7ff;
+  --accent-glow: rgba(110, 231, 255, 0.28);
+  --glow-rgb: 110, 231, 255;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --transition: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-main);
+  font-family: var(--font);
+  line-height: 1.5;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Ambient Background Glow */
+body::before {
+  content: "";
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 700px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, rgba(124, 92, 255, 0.08) 45%, transparent 70%);
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+  transition: background 0.8s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 20px 0;
+  transition: background 0.3s ease, padding 0.3s ease, border-color 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+header.scrolled {
+  background: rgba(7, 7, 9, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 14px 0;
+  border-bottom-color: var(--card-border);
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.logo-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.cta-sm {
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--card-border);
+  color: #fff !important;
+  border-radius: 99px;
+  font-weight: 500 !important;
+  transition: background 0.2s ease, border-color 0.2s ease !important;
+}
+
+.cta-sm:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Hero Section */
+.hero {
+  padding: 160px 0 100px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--card-border);
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 28px;
+  letter-spacing: 0.02em;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  background: linear-gradient(180deg, #ffffff 40%, #7d7d8a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  color: var(--text-muted);
+  max-width: 620px;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.btn {
+  padding: 16px 36px;
+  border-radius: 99px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s var(--transition);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.45);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border-color: var(--card-border);
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Watch Showcase Area */
+.showcase {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  perspective: 1200px;
+  margin: 0 auto;
+}
+
+.showcase-glow {
+  position: absolute;
+  inset: 15% 10%;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 68%);
+  filter: blur(80px);
+  opacity: 0.45;
+  z-index: 1;
+  pointer-events: none;
+  transition: background 0.6s ease;
+}
+
+.watch-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out;
+  cursor: grab;
+}
+
+.watch-card:active {
+  cursor: grabbing;
+}
+
+.watch-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.7));
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Color Switcher */
+.color-picker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 48px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--card-border);
+  border-radius: 99px;
+  backdrop-filter: blur(12px);
+}
+
+.color-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  cursor: pointer;
+  background: var(--swatch);
+  transition: outline-color 0.2s ease, transform 0.2s ease;
+}
+
+.color-btn:hover {
+  transform: scale(1.1);
+}
+
+.color-btn.active {
+  outline-color: #fff;
+}
+
+/* Specs Row */
+.specs-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+  margin-top: 80px;
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  padding: 40px 0;
+}
+
+.spec-item {
+  text-align: center;
+}
+
+.spec-val {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #fff;
+  display: block;
+}
+
+.spec-lbl {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.01em;
+  margin-top: 4px;
+}
+
+/* Bento Grid */
+.section-features {
+  padding: 120px 0;
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.section-tag {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.bento-box {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 28px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bento-box:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.bento-large {
+  grid-column: span 7;
+  min-height: 400px;
+}
+
+.bento-mid {
+  grid-column: span 5;
+  min-height: 400px;
+}
+
+.bento-small {
+  grid-column: span 4;
+  min-height: 300px;
+}
+
+.bento-h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.bento-p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.bento-graphic-ring {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 6px solid rgba(255, 255, 255, 0.05);
+  border-top-color: var(--accent);
+  border-right-color: #7c5cff;
+  margin: 30px auto 0;
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* CTA Banner */
+.cta-banner {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1px solid var(--card-border);
+  border-radius: 32px;
+  padding: 80px 32px;
+  text-align: center;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--card-border);
+  padding: 40px 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Breakpoints */
+@media (max-width: 900px) {
+  .bento-large, .bento-mid, .bento-small {
+    grid-column: span 12;
+  }
+
+  .specs-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+// 1. Live Watch Clock Synchronizer
+function updateWatchClock() {
+  const clockElem = document.getElementById('liveClock');
+  if (!clockElem) return;
+  const now = new Date();
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  hours = hours < 10 ? '0' + hours : hours;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  clockElem.textContent = `${hours}:${minutes}`;
+}
+setInterval(updateWatchClock, 1000);
+updateWatchClock();
+
+// 2. Fixed Header Scroll Blur State
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+// 3. Interactive 3D Perspective Tilt on Mouse Movement
+const showcaseArea = document.getElementById('showcaseArea');
+const watchCard = document.getElementById('watchCard');
+
+if (showcaseArea && watchCard) {
+  showcaseArea.addEventListener('mousemove', (e) => {
+    const rect = showcaseArea.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+
+    const rotateX = -(y / (rect.height / 2)) * 14;
+    const rotateY = (x / (rect.width / 2)) * 14;
+
+    watchCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+
+  showcaseArea.addEventListener('mouseleave', () => {
+    watchCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
+  });
+}
+
+// 4. Band Finish Swatch & Glow Color Switcher
+const buttons = document.querySelectorAll('.color-btn');
+const strapA = document.getElementById('strapA');
+const strapB = document.getElementById('strapB');
+const strapC = document.getElementById('strapC');
+
+buttons.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    buttons.forEach((b) => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const c1 = btn.getAttribute('data-c1');
+    const c2 = btn.getAttribute('data-c2');
+    const c3 = btn.getAttribute('data-c3');
+    const accent = btn.getAttribute('data-accent');
+
+    // Apply new strap gradients to the SVG watch
+    if (strapA && strapB && strapC) {
+      strapA.setAttribute('stop-color', c1);
+      strapB.setAttribute('stop-color', c2);
+      strapC.setAttribute('stop-color', c3);
+    }
+
+    // Update the dynamic CSS accent glow variable
+    document.documentElement.style.setProperty('--accent', accent);
+  });
+});
